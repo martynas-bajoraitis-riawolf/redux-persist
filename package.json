@@ -16,15 +16,16 @@
   ],
   "scripts": {
     "ava": "ava",
-    "build": "npm run build:commonjs && npm run build:es && npm run build:umd",
+    "build": "yarn run build:commonjs && yarn run build:es && yarn run build:umd",
     "build:commonjs": "tsc --module commonjs --outDir lib",
     "build:es": "tsc --module es2015 --outDir es",
     "build:umd": "rollup -c",
     "clean": "rimraf dist && rimraf es && rimraf lib",
+    "prepare": "yarn run build",
     "precommit": "lint-staged",
     "stats:size": "node ./scripts/size-estimator.js",
     "test": "ava",
-    "version": "npm run clean && npm run build && npm run stats:size | tail -1 >> LIBSIZE.md && git add LIBSIZE.md"
+    "version": "yarn run clean && yarn run build && yarn run stats:size | tail -1 >> LIBSIZE.md && git add LIBSIZE.md"
   },
   "lint-staged": {
     "src/**/*.ts": [
