@@ -21,7 +21,6 @@
     "build:es": "tsc --module es2015 --outDir es",
     "build:umd": "rollup -c",
     "clean": "rimraf dist && rimraf es && rimraf lib",
-    "prepare": "npm run build",
     "precommit": "lint-staged",
     "stats:size": "node ./scripts/size-estimator.js",
     "test": "ava",
